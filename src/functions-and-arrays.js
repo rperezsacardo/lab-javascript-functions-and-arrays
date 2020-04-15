@@ -15,12 +15,25 @@ const maxOfTwoNumbers = function (a, b){
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+const findLongestWord = (array) => {
+  if(!array.length){
+    return null
+  }
+  let longestWord = array[0]; 
+  for(let word of array){
+    if(word !== longestWord && word.length > array.length){
+      longestWord = word;
+    }
+  }
+  return longestWord;
+}
+
 
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-const sumNumbers = function (array = 0){
+const sumNumbers = function (array){
   let totalSum = 0;
   for(let numb of array){
     totalSum+= numb;
@@ -45,22 +58,20 @@ const averageNumbers = function (array){
       }  
     let averageCalc = totalSum / array.length;
     return averageCalc;
-  }  
-  
 }
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 const averageWordLength = function(array = null){
-  if (array === undefined || array === NaN || array === ''){
+  if (!array.length){
     return null;
-    }else{  
-      let itensCount = array.length;
-      let arrayJoin = array.join('');
-      let averge = arrayJoin.length / itensCount;
-      return averge;
-    }
+    }  
+  let itensCount = array.length;
+  let arrayJoin = array.join('');
+  let averge = arrayJoin.length / itensCount;
+  return averge;    
+    
   
 }
 
@@ -81,27 +92,24 @@ const wordsUnique = [
 ];
 
 
-const uniquifyArray = function (array, element){
-  const
-  if(array.indexOf(element) == -1)
 
-    
+const uniquifyArray = function (array) {
+  if(!array.length){
+    return null;
   }
-
-  /*
-  function updateVegetablesCollection (veggies, veggie) {
-    if (veggies.indexOf(veggie) === -1) {
-        veggies.push(veggie);
-        console.log('New veggies collection is : ' + veggies);
-    } else if (veggies.indexOf(veggie) > -1) {
-        console.log(veggie + ' already exists in the veggies collection.');
+  const newArray = [];
+  for(let word of array){
+    if(newArray.indexOf(word) === -1){
+      newArray.push(word);
     }
-}
+  }
+  
+  return newArray;
+}  
+ 
 
-*/
 
 
-}
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
