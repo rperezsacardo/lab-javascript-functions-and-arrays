@@ -32,17 +32,17 @@ return totalSum;
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-const averageNumbers = function (array = null){
-  if (array === undefined || array === NaN || array === ''){
+const averageNumbers = function (array){
+  if (!array.length){
     return null;
-    }else{
-      let totalSum = 0;
+    }
+    let totalSum = 0;
       for(let numb of array){
         totalSum+= numb;
       }
       if(totalSum < 0){ // Could use  Math.(...)
       totalSum *= -1;
-      }
+      }  
     let averageCalc = totalSum / array.length;
     return averageCalc;
   }  
